@@ -35,7 +35,7 @@ def home():
         if dev_environment == "TEST":
             start_return_url = "http://127.0.0.1:5000"
         else:
-            start_return_url = "https://woomobileadmin.herokuapp.com/"
+            start_return_url = "https://woomobileadmin.herokuapp.com"
 
         params = {
             "app_name": "Mobile Admin for Woocommerce",
