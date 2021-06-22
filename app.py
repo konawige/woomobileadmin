@@ -17,7 +17,7 @@ app.config.from_object(Config)
 
 bootstrap = Bootstrap(app)
 
-dev_environment = "TEST"
+dev_environment = "PROD"
 
 
 class AddForm(FlaskForm):
