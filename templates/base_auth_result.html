@@ -1,0 +1,17 @@
+{% extends "base_auth.html" %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        {% if success == 1 %}
+        <h2 style="color: #7933FF;">AUTHENTICATION SUCCESSFUL</h2>
+        <p>You can now close the browser, login and start to use the application</p>
+    {% else %}
+    <h2 style="color: red;">AUTHENTICATION FAIL</h2>
+    <p style="text-align: left;margin-top: 20px; margin-bottom: 40px;">Something went wrong, verify your credentials  and try again</p>
+    <div><a href="/auth" class="btn btn-danger btn-lg" role="button">TRY AGAIN</a></div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
+

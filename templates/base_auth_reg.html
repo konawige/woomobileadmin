@@ -1,0 +1,38 @@
+{% extends "base_auth.html" %}
+
+{% block page_content %}
+    <div class="row">
+        <p style="text-align: justify;">Before using the application, you must first grant necessary access in order to connect with your website</p>
+    </div>
+    <div class="row form-class" >
+        <h2 class="h2-class">App Registration</h2>
+        <form action="/auth" method="post" style="text-align: left;">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.auth_url.label }} <br>
+                <span style="font-style: italic;">Do not include "https://www., eg google.com"</span><br>
+                {{ form.auth_url() }}
+            </p>
+            <p>{{ form.user_id.label }} <br>
+                <span style="font-style: italic;">Email address used for registration</span><br> 
+                {{ form.user_id() }}</p>
+            <p class="btn btn-lg submit-class"> {{ form.submit() }}</p>
+        </form>
+
+    </div>
+    <div class="row" style="margin-top: 20px; text-align: justify;">
+        <ul>
+            <li>Provide the url of your website. Do not include "https://www., eg google.com"</li>
+            <li>As user id, provide the email you use to register in the mobile application</li>
+            <li>After submission, you should be redirect to a woocommerce page where you should authenticate and approve the connection request</li>
+        </ul>
+        
+    </div>
+    <div class="row" style="text-align: left;">
+        <p>Got any questions? Contact us at <a href="woomobile@wikomtech.com">woomobile@wikomtech.com</a></p>
+    </div>
+
+    </div>
+
+{% endblock %}
+
