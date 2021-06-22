@@ -10,7 +10,7 @@
             {{ form.hidden_tag() }}
             <p>
                 {{ form.auth_url.label }} <br>
-                <span style="font-style: italic;">Do not include "https://www., eg google.com"</span><br>
+                <span style="font-style: italic;">Do not include "https://www." at the beginning</span><br>
                 {{ form.auth_url() }}
             </p>
             <p>{{ form.user_id.label }} <br>
@@ -22,8 +22,8 @@
     </div>
     <div class="row" style="margin-top: 20px; text-align: justify;">
         <ul>
-            <li>Provide the url of your website. Do not include "https://www., eg google.com"</li>
-            <li>As user id, provide the email you use to register in the mobile application</li>
+            <li>Provide the url of your website. Do not include "https://www.", e.g. google.com"</li>
+            <li>As Email, provide the email you use to register in the mobile application</li>
             <li>After submission, you should be redirect to a woocommerce page where you should authenticate and approve the connection request</li>
         </ul>
         

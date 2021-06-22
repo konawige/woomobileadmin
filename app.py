@@ -22,7 +22,7 @@ dev_environment = "PROD"
 
 class AddForm(FlaskForm):
     auth_url = StringField(u'URL of your site', validators=[DataRequired()])
-    user_id = StringField('User id', validators=[DataRequired()])
+    user_id = StringField(u'Email address', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
@@ -40,7 +40,7 @@ def home():
         params = {
             "app_name": "Mobile Admin for Woocommerce",
             "scope": 'read_write',
-            "user_id": "{}||{}".format(form.user_id.data, form.auth_url.data),
+            "user_id": "{}_site_{}".format(form.user_id.data, form.auth_url.data),
             "return_url": start_return_url + "/return-page",
             "callback_url": "https://us-central1-woo-mobile.cloudfunctions.net/postConsumerAuth"
         }
