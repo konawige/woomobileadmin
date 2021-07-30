@@ -10,14 +10,14 @@ from wtforms.validators import DataRequired
 from urllib.parse import urlencode
 
 import re
-import requests
+#import requests
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 bootstrap = Bootstrap(app)
 
-dev_environment = "PROD"
+dev_environment = "TEST"
 
 
 class AddForm(FlaskForm):
@@ -45,7 +45,7 @@ def home():
             "callback_url": "https://us-central1-woo-mobile.cloudfunctions.net/postConsumerAuth"
         }
         query_string = urlencode(params)
-        get_request = "{}{}?{}".format(store_url, endpoint, query_string)
+        get_request = "%s%s?%s" % (store_url, endpoint, query_string)
 
         print(get_request)
         return redirect(get_request)
